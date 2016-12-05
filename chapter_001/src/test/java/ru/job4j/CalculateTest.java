@@ -8,15 +8,14 @@ import static org.junit.Assert.assertThat;
 
 /**
 * Test.
-* 
-* @author ayuzyak
-* @version 1
-* @since 04.12.2016
+* @author ayuzyak.
+* @version 1.
+* @since 04.12.2016.
 */
 public class CalculateTest {
-    /**
-     * Test add.
-     */
+/**
+* Test add.
+*/
     @Test
     public void whenExecuteMainThenPrintToConsole() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
