@@ -5,7 +5,7 @@ package ru.job4j;
  * @author ayuzyak.
  * @version 1.
  * @since 14.12.2016.
-*/
+ */
 public class Max {
     /**
      * Get max from two.

@@ -42,8 +42,8 @@ public class ArrayOperationsTest {
     public void removeDuplicatesFromArrayTest() {
         ArrayOperations operations = new ArrayOperations();
         assertThat(
-                operations.removeDuplicates(new String[]{"Привет","Привет","Пока","Пока"}),
-                is(new String[]{"Привет","Пока"})
+                operations.removeDuplicates(new String[]{"пїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅ"}),
+                is(new String[]{"пїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅ"})
         );
     }
 
