@@ -1,7 +1,7 @@
 package ru.job4j.Inheritance;
 
 /**
- * Profession.
+ * Professions.
  * @author ayuzyak.
  * @version 1.
  * @since 02.02.2017.
