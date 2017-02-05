@@ -9,7 +9,7 @@ package ru.job4j.Inheritance;
 public class Engineer extends Profession {
     /**
      * The class field.
-     * Class inheritance Profession and the creation of an original metodov and fields.
+     * Class inheritance Profession and the creation of an original method and fields.
      * Сreating experience.
      */
     private int experience;
