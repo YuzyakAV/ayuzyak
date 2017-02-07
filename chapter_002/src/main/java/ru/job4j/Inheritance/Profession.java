@@ -9,67 +9,165 @@ package ru.job4j.Inheritance;
 
 public class Profession {
     /**
-     * The class field.
-     * Create fields and methods that are common to all inherited classes.
-     * Сreating name.
-     * Сreating age.
-     * Сreating university where the training took place.
-     * Сreating recommendations.
-     * Сreating average score university.
+     * experience.
      */
-    private String name;
-    private int age;
-    private String university;
-    private String recommendations;
-    private int aScore;
+    private int experience = 0;
+
     /**
-     * The constructor of the Profession with parameters.
-     * @param name - name;
-     * @param age - age;
-     * @param university - university;
-     * @param recommendations - recommendations;
-     * @param aScore - aScore;
+     * qualification.
      */
-    public Profession(String name, int age, String university, String recommendations, int aScore) {
-        this.name = name;
-        this.age = age;
-        this.university = university;
-        this.recommendations = recommendations;
-        this.aScore = aScore;
+    private int qualification = 0;
+
+    /**
+     * jobPlace.
+     */
+    private String jobPlace = "";
+
+    /**
+     * hours Of Work PerMonth.
+     */
+    private int hoursOfWorkPerMonth = 0;
+
+    /**
+     * hourly Rate.
+     */
+    private double hourlyRate = 0;
+
+    /**
+     * salary.
+     */
+    private double salary = 0;
+
+    /**
+     * education.
+     */
+    private ArrayList<String> education = new ArrayList<>();
+
+    /**
+     * set experience.
+     * @param experience - experience in profession.
+     */
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
+
     /**
-     * Getter to specify the name.
-     * @return tag.
+     * get experience.
+     * @return experience.
      */
-    public String getName() {
-        return this.name;
+    public int getExperience() {
+        return experience;
     }
+
     /**
-     * Getter to specify the age.
-     * @return tag.
+     * set qualification.
+     * @param qualification - qualification in profession.
      */
-    public int getAge() {
-        return this.age;
+    public void setQualification(int qualification) {
+        this.qualification = qualification;
     }
+
     /**
-     * Getter to specify the university.
-     * @return tag.
+     * get qualification.
+     * @return qualification.
      */
-    public String getUniversity() {
-        return this.university;
+    public int getQualification() {
+        return qualification;
     }
+
     /**
-     * Getter to specify the recommendations.
-     * @return tag.
+     * set jobPlace.
+     * @param jobPlace - place of job.
      */
-    public String getRecommendations() {
-        return this.recommendations;
+    public void setJobPlace(String jobPlace) {
+        this.jobPlace = jobPlace;
     }
+
     /**
-     * Getter to specify the aScore.
-     * @return tag.
+     * get jobPlace.
+     * @return jobPlace.
      */
-    public int getAScore() {
-        return this.aScore;
+    public String getJobPlace() {
+        return jobPlace;
+    }
+
+    /**
+     * set hoursOfWorkPerMonth.
+     * @param hoursOfWorkPerMonth - number of working hours per month.
+     */
+    public void setHoursOfWorkPerMonth(int hoursOfWorkPerMonth) {
+        this.hoursOfWorkPerMonth = hoursOfWorkPerMonth;
+    }
+
+    /**
+     * get hoursOfWorkPerMonth.
+     * @return hoursOfWorkPerMonth.
+     */
+    public int getHoursOfWorkPerMonth() {
+        return hoursOfWorkPerMonth;
+    }
+
+    /**
+     * set hourlyRate.
+     * @param hourlyRate - payment for 1 hour of work.
+     */
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    /**
+     * get hourlyRate.
+     * @return hourlyRate.
+     */
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    /**
+     * set salary.
+     */
+    public void setSalary() {
+        this.salary = hoursOfWorkPerMonth * hourlyRate;
+    }
+
+    /**
+     * get salary.
+     * @return salary.
+     */
+    public double getSalary() {
+        return salary;
+    }
+
+    /**
+     * set education.
+     * @param education - array of educations.
+     */
+    public void setEducation(ArrayList<String> education) {
+        this.education = education;
+    }
+
+    /**
+     * get education.
+     * @return education.
+     */
+    public ArrayList<String> getEducation() {
+        return education;
+    }
+
+    /**
+     * improve skills.
+     * @param skill - add skill.
+     */
+    public void improveSkills(String skill) {
+        education.add(skill);
+    }
+
+    /**
+     * show all skills.
+     */
+    public void showSkills() {
+        for (String s : education) {
+            System.out.println(s);
+        }
     }
 }

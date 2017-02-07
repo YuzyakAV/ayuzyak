@@ -8,13 +8,44 @@ package ru.job4j.Inheritance;
  */
 public class Engineer extends Profession {
     /**
-     * The class field.
-     * Class inheritance Profession and the creation of an original method and fields.
-     * Сreating experience.
+     * number of projects.
      */
-    private int experience;
-    public Engineer(String name, int age, String university, String recommendations, int aScore) {
-        super(name, age, university, recommendations, aScore);
-        this.experience = experience;
+    private int numberOfProjects;
+
+    /**
+     * number of subordinate workers.
+     */
+    private int numberOfSubordinateWorkers;
+
+    /**
+     * method for set number of projects created by Engineer.
+     * @param numberOfProjects created by Engineer.
+     */
+    public void setNumberOfProjects(int numberOfProjects) {
+        this.numberOfProjects = numberOfProjects;
+    }
+
+    /**
+     * method for get number of projects created by Engineer.
+     * @return numberOfProjects created by Engineer.
+     */
+    public int getNumberOfProjects() {
+        return numberOfProjects;
+    }
+
+    /**
+     * method for set number of subordinate Engineer workers.
+     * @param numberOfSubordinateWorkers Engineer workers.
+     */
+    public void setNumberOfSubordinateWorkers(int numberOfSubordinateWorkers) {
+        this.numberOfSubordinateWorkers = numberOfSubordinateWorkers;
+    }
+
+    /**
+     * method for get number of subordinate Engineer workers.
+     * @return numberOfSubordinateWorkers.
+     */
+    public int getNumberOfSubordinateWorkers() {
+        return numberOfSubordinateWorkers;
     }
 }

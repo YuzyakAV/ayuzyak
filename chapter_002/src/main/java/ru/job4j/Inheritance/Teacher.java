@@ -1,5 +1,6 @@
 package ru.job4j.Inheritance;
 
+import java.util.ArrayList;
 /**
  * Teacher.
  * @author ayuzyak.
@@ -8,13 +9,88 @@ package ru.job4j.Inheritance;
  */
 public class Teacher extends Profession {
     /**
-     * The class field.
-     * Class inheritance Profession and the creation of an original method and fields.
-     * Сreating refresher training.
+     * average rating of all students.
      */
-    private int refTrain;
-    public Teacher(String name, int age, String university, String recommendations, int aScore) {
-        super(name, age, university, recommendations, aScore);
-        this.refTrain = refTrain;
+    private int averageRatingOfAllStudents;
+
+    /**
+     * number of students.
+     */
+    private int numberOfStudens;
+
+    /**
+     * method for checking homework.
+     * @param homework is student's homework.
+     * @param correctWork is correct homework for checking.
+     * @return boolean.
+     */
+    public boolean checkHomeWork(HomeWork homework, HomeWork correctWork) {
+        boolean rate = false;
+        return homework.equals(correctWork);
     }
+
+    /**
+     * method for teaching student.
+     * @param student for teaching.
+     * @param lesson for teaching.
+     */
+    public void teach(Student student, Lesson lesson) {
+        student.addLesson(lesson);
+    }
+
+    /**
+     * method for assess of knowledge.
+     * @param student for assessment.
+     * @param baseKnowledge is knowledge for assessment.
+     * @return assessment of knowledge.
+     */
+    public int assessKnowledge(Student student, ArrayList<Lesson> baseKnowledge) {
+        int assessment = 0;
+        final int well = 5;
+        if (student.getKnowledge().equals(baseKnowledge)) {
+            assessment = well;
+        }
+        return assessment;
+    }
+}
+
+/**
+ * Class HomeWork.
+ */
+class HomeWork {
+
+}
+
+/**
+ * Class Student.
+ */
+class Student {
+
+    /**
+     * list of knowledge.
+     */
+    private ArrayList<Lesson> knowledge = new ArrayList<Lesson>();
+
+    /**
+     * method for add lesson.
+     * @param lesson to add.
+     */
+    public void addLesson(Lesson lesson) {
+        this.knowledge.add(lesson);
+    }
+
+    /**
+     * method for get knowledge.
+     * @return list of lessons.
+     */
+    public ArrayList<Lesson> getKnowledge() {
+        return this.knowledge;
+    }
+}
+
+/**
+ * Class Lesson.
+ */
+class Lesson {
+
 }
