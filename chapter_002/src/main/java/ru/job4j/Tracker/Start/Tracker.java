@@ -4,7 +4,7 @@ package ru.job4j.start;
  * Class Tracker.
  * @author ayuzyak.
  * @version 1.
- * @since 07.02.2017
+ * @since 07.02.2017.
  */
 
 public class Tracker {
