@@ -1,10 +1,10 @@
-package ru.job4j.start;
+package ru.job4j.tracker;
 
 /**
  * Class Tracker.
  * @author ayuzyak.
  * @version 1.
- * @since 07.02.2017.
+ * @since 07.02.2017
  */
 public class TrackerTest {
 
