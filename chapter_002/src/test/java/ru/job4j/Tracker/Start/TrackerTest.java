@@ -38,7 +38,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("Name_1", "Desc_1");
         tracker.add(item);
-        String id = "N23";
+        String id = "N1";
         item.setId(id);
         Item resultItem = tracker.findById(id);
         assertThat(resultItem, is(item));
@@ -53,12 +53,12 @@ public class TrackerTest {
         Item item = new Item("Name_1", "Desc_1");
         tracker.add(item);
         Item[] items = tracker.getAll();
-        String id = items[0].getId();
+        String id = items[1].getId();
         Item checkItem = new Item("Item", "Description");
         checkItem.setId(id);
         tracker.update(checkItem);
         Item[] resultItems = tracker.getAll();
-        assertThat(resultItems[0], is(checkItem));
+        assertThat(resultItems[1], is(checkItem));
     }
 
     /**
@@ -70,13 +70,13 @@ public class TrackerTest {
         Item item = new Item("Name_1", "Desc_1");
         tracker.add(item);
         Item[] items = tracker.getAll();
-        String id = items[0].getId();
+        String id = items[1].getId();
         Item deleteItem = new Item("Item", "Description");
         deleteItem.setId(id);
         tracker.delete(deleteItem);
         Item[] resultItems = tracker.getAll();
         Item checkItem = null;
-        assertThat(resultItems[0], is(checkItem));
+        assertThat(resultItems[1], is(checkItem));
     }
 
     /**
@@ -101,7 +101,7 @@ public class TrackerTest {
         Item itemForComment = new Item("Name_1", "Desc_1");
         tracker.add(itemForComment);
         Item[] items = tracker.getAll();
-        String id = items[0].getId();
+        String id = items[1].getId();
         Item checkItem = new Item("Name_1", "Desc_1");
         checkItem.setId(id);
         ArrayList<String> checkComments = checkItem.getComments();
