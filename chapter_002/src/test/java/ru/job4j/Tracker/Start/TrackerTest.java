@@ -22,28 +22,10 @@ public class TrackerTest {
     @Test
     public void whenAddItemsToTracker() {
         Tracker tracker = new Tracker();
-        final int checkItemsLength = 10;
+        final int checkItemsLength = 1;
         Item[] checkItems = new Item[checkItemsLength];
-        final int pos_0 = 0;
         final int pos_1 = 1;
-        final int pos_2 = 2;
-        final int pos_3 = 3;
-        final int pos_4 = 4;
-        final int pos_5 = 5;
-        final int pos_6 = 6;
-        final int pos_7 = 7;
-        final int pos_8 = 8;
-        final int pos_9 = 9;
-        checkItems[pos_0] = tracker.add(new Item("Name_1", "Desc_1"));
-        checkItems[pos_1] = tracker.add(new Item("Name_2", "Desc_2"));
-        checkItems[pos_2] = tracker.add(new Item("Name_3", "Desc_3"));
-        checkItems[pos_3] = tracker.add(new Item("Name_4", "Desc_4"));
-        checkItems[pos_4] = tracker.add(new Item("Name_5", "Desc_5"));
-        checkItems[pos_5] = tracker.add(new Item("Name_6", "Desc_6"));
-        checkItems[pos_6] = tracker.add(new Item("Name_7", "Desc_7"));
-        checkItems[pos_7] = tracker.add(new Item("Name_8", "Desc_8"));
-        checkItems[pos_8] = tracker.add(new Item("Name_9", "Desc_9"));
-        checkItems[pos_9] = tracker.add(new Item("Name_10", "Desc_10"));
+        checkItems[pos_1] = tracker.add(new Item("Name_1", "Desc_1"));
         Item[] resultItems = tracker.getAll();
         assertThat(resultItems, is(checkItems));
     }
