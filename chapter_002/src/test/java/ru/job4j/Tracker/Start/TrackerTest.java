@@ -38,7 +38,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("Name_1", "Desc_1");
         tracker.add(item);
-        String id = "N1";
+        String id = "N23";
         item.setId(id);
         Item resultItem = tracker.findById(id);
         assertThat(resultItem, is(item));
@@ -110,7 +110,7 @@ public class TrackerTest {
         tracker.addComment(checkItem, "Test");
         tracker.addComment(checkItem, "Comments");
         Item[] resultItems = tracker.getAll();
-        ArrayList<String> resultComments = resultItems[0].getComments();
+        ArrayList<String> resultComments = resultItems[1].getComments();
         assertThat(resultComments, is(checkComments));
     }
 }
