@@ -1,15 +1,10 @@
 package ru.job4j.tracker.start;
 
-import ru.job4j.tracker.models.Item;
-import ru.job4j.tracker.models.Task;
-
-import java.util.ArrayList;
-
 /**
  * Class StartUI.
- * @author ayuzyak.
- * @version 1.
- * @since 07.02.2017.
+ * @author ayuzyak
+ * @since 20.02.2017
+ * @version 1
  */
 
 public class StartUI {
