@@ -2,9 +2,9 @@ package ru.job4j.tracker.start;
 
 /**
  * Class StubInput.
- * @author ayuzyak.
- * @version 1.
- * @since 07.02.2017.
+ * @author yuzyakav
+ * @since 09.03.2017
+ * @version 1.0
  */
 
 public class StubInput implements Input {

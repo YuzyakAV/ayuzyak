@@ -2,9 +2,9 @@ package ru.job4j.tracker.start;
 
 /**
  * Class StartUI.
- * @author ayuzyak
- * @since 20.02.2017
- * @version 1
+ * @author yuzyakav
+ * @since 26.02.2017
+ * @version 1.0
  */
 
 public class StartUI {
