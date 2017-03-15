@@ -4,7 +4,7 @@ package ru.job4j.chess;
  * Class Bishop.
  * x - strings.
  * y - columns.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 10.03.2017
  * @version 1.0
  */

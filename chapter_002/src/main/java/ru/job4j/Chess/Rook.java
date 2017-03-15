@@ -2,7 +2,7 @@ package ru.job4j.chess;
 
 /**
  * Class Rook.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 10.03.2017
  * @version 1.0
  */
