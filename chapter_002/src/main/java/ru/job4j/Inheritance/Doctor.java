@@ -3,7 +3,7 @@ package ru.job4j.Inheritance;
 /**
  * Doctor.
  * Class Doctor.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 02.02.2017.
  */

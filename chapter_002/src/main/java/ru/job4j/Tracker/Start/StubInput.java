@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Class StubInput.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 09.03.2017
  * @version 1.0
  */

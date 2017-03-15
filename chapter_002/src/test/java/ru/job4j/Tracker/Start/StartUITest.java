@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Class StartUITest.
  *
- * @author ayuzyak
+ * @author ayuzyak.
  * @since 20.02.2017
  * @version 1
  */

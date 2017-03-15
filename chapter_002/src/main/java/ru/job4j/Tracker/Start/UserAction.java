@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Interface UserAction.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 06.03.2016
  * @version 1.0
  */

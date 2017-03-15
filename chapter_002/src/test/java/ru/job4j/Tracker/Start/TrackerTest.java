@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Class Tracker.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 07.02.2017
  */

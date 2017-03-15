@@ -11,7 +11,7 @@ import java.io.PrintStream;
 /**
  * Test Chess.
  *
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 10.03.2017
  * @version 1.0
  */

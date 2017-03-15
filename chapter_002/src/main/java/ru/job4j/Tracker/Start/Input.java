@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Interface Input.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 07.02.2017.
  */

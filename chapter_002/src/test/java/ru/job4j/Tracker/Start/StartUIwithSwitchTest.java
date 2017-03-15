@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Class StartUIwithSwitchTest.
  *
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 07.03.2017
  * @version 1.0
  */

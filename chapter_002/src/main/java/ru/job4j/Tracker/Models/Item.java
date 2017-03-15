@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Class Item.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 07.02.2017.
  */

@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Class Enter.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 04.03.2017
  * @version 1.0
  */

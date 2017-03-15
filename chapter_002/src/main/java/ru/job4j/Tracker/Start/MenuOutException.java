@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Class MenuOutException.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 07.03.2017
  * @version 1.0
  */

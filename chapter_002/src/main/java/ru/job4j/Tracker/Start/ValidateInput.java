@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Class ValidateInput.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 10.03.2017
  * @version 1.0
  */

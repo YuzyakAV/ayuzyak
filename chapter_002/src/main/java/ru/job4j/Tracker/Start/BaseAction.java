@@ -2,7 +2,7 @@ package ru.job4j.tracker.start;
 
 /**
  * Class BaseAction.
- * @author yuzyak
+ * @author yuzyak.
  * @since 07.03.2017
  * @version 1.0
  */

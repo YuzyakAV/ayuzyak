@@ -2,7 +2,7 @@ package ru.job4j.tracker.models;
 
 /**
  * Class Task.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 07.02.2017.
  */

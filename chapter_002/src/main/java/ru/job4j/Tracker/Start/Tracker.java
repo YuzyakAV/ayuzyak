@@ -7,7 +7,7 @@ import java.util.Random;
 
 /**
  * Class Tracker.
- * @author yuzyajav
+ * @author yuzyakav.
  * @since 06.03.2016
  * @version 1.0
  */

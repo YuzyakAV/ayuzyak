@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Test class Item.
  *
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 07.02.2017.
  */

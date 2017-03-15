@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Class StartUIwithSwitch.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 06.03.2017
  * @version 1.0
  */

@@ -2,7 +2,7 @@ package ru.job4j.tracker.models;
 
 /**
  * Class Bug.
- * @author yuzyakav
+ * @author yuzyakav.
  * @since 06.03.2017
  * @version 1.0
  */

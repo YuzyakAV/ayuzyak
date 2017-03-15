@@ -2,7 +2,7 @@ package ru.job4j.Inheritance;
 
 /**
  * Engineer.
- * @author ayuzyak.
+ * @author ayuzyak
  * @version 1.
  * @since 02.02.2017.
  */
