@@ -16,16 +16,16 @@ import static org.junit.Assert.assertThat;
  */
 public class DropAbuseTest {
     /**
-     * Test stream with abuse words: Ball, Letter, Word, Дорога.
+     * Test stream with abuse words: Ball, Letter, Word, РґРѕСЂРѕРіР°.
      */
     @Test
     public void whenStreamHasAbuseWords() {
         Joiner joiner = Joiner.on(System.getProperty("line.separator"));
         final String sourceText = joiner.join("Fly, ball little letter bird, fly!",
-                "Fly into twordhe blue sky!", "One, twwordo, three, дорога", "You are ball free!");
+                "Fly into twordhe blue sky!", "One, twwordo, three, РґРѕСЂРѕРіР°", "You are ball free!");
         byte[] bytesIn = sourceText.getBytes();
         byte[] bytesOut;
-        String[] abuse = new String[]{"ball", "letter", "word", "дорога"};
+        String[] abuse = new String[]{"ball", "letter", "word", "РґРѕСЂРѕРіР°"};
         try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytesIn);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             DropAbuse dropAbuse = new DropAbuse();
