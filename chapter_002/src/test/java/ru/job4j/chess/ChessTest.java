@@ -55,7 +55,7 @@ public class ChessTest {
         assertThat(resultFigures, is(checkFigures));
     }
 
-    /**
+        /**
      * Test for check method move if source cell hasn't figure.
      */
     @Test
