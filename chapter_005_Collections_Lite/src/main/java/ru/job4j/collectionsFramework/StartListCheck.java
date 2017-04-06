@@ -1,4 +1,4 @@
-package ru.job4j.testingPerfomance;
+package ru.job4j.collectionsFramework;
 
 
 import java.util.ArrayList;
