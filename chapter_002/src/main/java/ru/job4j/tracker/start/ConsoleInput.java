@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Class ConsoleInput.
  * @author Ayuzyak
- * @since 27.02.2016
+ * @since 27.02.2017
  * @version 1.0
  */
 
