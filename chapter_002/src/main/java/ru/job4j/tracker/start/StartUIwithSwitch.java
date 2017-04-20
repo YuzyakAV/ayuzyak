@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 /**
  * Class StartUIwithSwitch.
- * @author yuzyakav.
- * @since 06.03.2017
+ * @author Ayuzyak
+ * @since 22.03.2017
  * @version 1.0
  */
 
@@ -69,7 +69,7 @@ public class StartUIwithSwitch {
 					item = new Task(name, desc);
 					tracker.add(item);
 					countAddedTask++;
-					if (countAddedTask <= tracker.getAll().length) {
+					if (countAddedTask <= tracker.getAll().size()) {
 						System.out.println("You have successfully added the task. Your task id is: " + item.getId());
 					} else {
 						System.out.println("Sorry you can't add task. List of task is full.");
@@ -102,10 +102,10 @@ public class StartUIwithSwitch {
 					break;
 				case 4:
 					System.out.println("The List of tasks: ");
-					Item[] items = tracker.getAll();
-					for (int i = 0; i < items.length; i++) {
-						if (items[i] != null) {
-							System.out.println("Task - " + items[i].getName() + " with id - " + items[i].getId());
+					ArrayList<Item> items = tracker.getAll();
+					for (int i = 0; i < items.size(); i++) {
+						if (items.get(i) != null) {
+							System.out.println("Task - " + items.get(i).getName() + " with id - " + items.get(i).getId());
 						}
 					}
 					break;
