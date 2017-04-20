@@ -7,20 +7,17 @@ import java.util.Random;
 
 /**
  * Class Tracker.
- * @author yuzyakav.
- * @since 06.03.2016
+ * @author Ayuzyak
+ * @since 26.02.2016
  * @version 1.0
  */
 
 public class Tracker {
-	/**
-	 * tracker's length.
-	 */
-	private final int arrLength = 10;
+
 	/**
 	 * item.
 	 */
-	private Item[] items = new Item[arrLength];
+	private ArrayList<Item> items = new ArrayList<>();
 
 	/**
 	 * position.
@@ -39,9 +36,7 @@ public class Tracker {
 	 */
 	public Item add(Item item) {
 		item.setId(generateId());
-		if (position < items.length) {
-			this.items[position++] = item;
-		}
+		this.items.add(item);
 		return item;
 	}
 
@@ -73,12 +68,9 @@ public class Tracker {
 	 * getting all items.
 	 * @return result - items array.
 	 */
-	public Item[] getAll() {
-		Item[] result = new Item[this.position];
-		for (int i = 0; i != this.position; i++) {
-			result[i] = this.items[i];
-		}
-		return result;
+	public ArrayList<Item> getAll() {
+
+		return this.items;
 	}
 
 	/**
@@ -86,9 +78,9 @@ public class Tracker {
 	 * @param item - item for updating.
 	 */
 	public void update(Item item) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				items[i] = item;
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i) != null && items.get(i).getId().equals(item.getId())) {
+				items.set(i, item);
 				break;
 			}
 		}
@@ -99,9 +91,9 @@ public class Tracker {
 	 * @param item - item for deleting.
 	 */
 	public void delete(Item item) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				items[i] = null;
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i) != null && items.get(i).getId().equals(item.getId())) {
+				items.set(i, null);
 				break;
 			}
 		}
@@ -130,9 +122,9 @@ public class Tracker {
 	 */
 	public void addComment(Item item, String comment) {
 		ArrayList<String> comments;
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				comments = items[i].getComments();
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i) != null && items.get(i).getId().equals(item.getId())) {
+				comments = items.get(i).getComments();
 				comments.add(comment);
 				break;
 			}
@@ -146,9 +138,9 @@ public class Tracker {
 	 */
 	public ArrayList<String> showComments(Item item) {
 		ArrayList<String> comments = new ArrayList<>();
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				comments = items[i].getComments();
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i) != null && items.get(i).getId().equals(item.getId())) {
+				comments = items.get(i).getComments();
 				break;
 			}
 		}
@@ -162,117 +154,8 @@ public class Tracker {
 	 */
 	public boolean hasId(Item item) {
 		boolean trackerHasId = false;
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				trackerHasId = true;
-				break;
-			}
-		}
-		return trackerHasId;
-	}
-}
-	 * generate id for item.
-	 * @return generated id.
-	 */
-	String generateId() {
-		return String.valueOf(System.currentTimeMillis() + RN.nextInt());
-	}
-
-	/**
-	 * getting all items.
-	 * @return result - items array.
-	 */
-	public Item[] getAll() {
-		Item[] result = new Item[this.position];
-		for (int i = 0; i != this.position; i++) {
-			result[i] = this.items[i];
-		}
-		return result;
-	}
-
-	/**
-	 * update item.
-	 * @param item - item for updating.
-	 */
-	public void update(Item item) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				items[i] = item;
-				break;
-			}
-		}
-	}
-
-	/**
-	 * delete item.
-	 * @param item - item for deleting.
-	 */
-	public void delete(Item item) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				items[i] = null;
-				break;
-			}
-		}
-	}
-
-	/**
-	 * search item by name.
-	 * @param key - item's name for search item.
-	 * @return result - item with required name.
-	 */
-	Item findByName(String key) {
-		Item result = null;
-		for (Item i : this.items) {
-			if (i != null && i.getName().equals(key)) {
-				result = i;
-				break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * add comment to item.
-	 * @param item - item for commenting.
-	 * @param comment - adding comment.
-	 */
-	public void addComment(Item item, String comment) {
-		ArrayList<String> comments;
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				comments = items[i].getComments();
-				comments.add(comment);
-				break;
-			}
-		}
-	}
-
-	/**
-	 * show comments of item.
-	 * @param item - item for showing comments.
-	 * @return list of comments.
-	 */
-	public ArrayList<String> showComments(Item item) {
-		ArrayList<String> comments = new ArrayList<>();
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
-				comments = items[i].getComments();
-				break;
-			}
-		}
-		return comments;
-	}
-
-	/**
-	 * checking tracker for containing item Id.
-	 * @param item - item for check.
-	 * @return boolean - true if tracker contain item.
-	 */
-	public boolean hasId(Item item) {
-		boolean trackerHasId = false;
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] != null && items[i].getId().equals(item.getId())) {
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i) != null && items.get(i).getId().equals(item.getId())) {
 				trackerHasId = true;
 				break;
 			}
