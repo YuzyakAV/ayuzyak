@@ -1,9 +1,11 @@
 package ru.job4j.tracker.start;
 
+import java.util.ArrayList;
+
 /**
  * Class StubInput.
- * @author yuzyakav.
- * @since 09.03.2017
+ * @author Ayuzyak
+ * @since 29.03.2017
  * @version 1.0
  */
 
@@ -37,7 +39,7 @@ public class StubInput implements Input {
 	}
 
 	@Override
-	public int ask(String question, int[] range) {
+	public int ask(String question, ArrayList<Integer> range) {
 		int key = Integer.parseInt(this.ask(question));
 		boolean exist = false;
 		for (int value : range) {
