@@ -1,10 +1,12 @@
 package ru.job4j.tracker.start;
 
+import java.util.ArrayList;
+
 /**
  * Interface Input.
- * @author ayuzyak
- * @version 1.
- * @since 07.02.2017.
+ * @author Ayuzyak
+ * @since 1.03.2017
+ * @version 1.0
  */
 
 public interface Input {
@@ -22,5 +24,5 @@ public interface Input {
 	 * @param range of numbers.
 	 * @return String.
 	 */
-	int ask(String question, int[] range);
+	int ask(String question, ArrayList<Integer> range);
 }
