@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 /**
  * Class MenuTracker.
- * @author yuzyakav
- * @since 06.03.2016
+ * @author Ayuzyak
+ * @since 26.03.2017
  * @version 1.0
  */
 public class MenuTracker {
@@ -25,7 +25,7 @@ public class MenuTracker {
     /**
      * menu of actions.
      */
-    private UserAction[] actions = new UserAction[9];
+    private ArrayList<UserAction> actions = new ArrayList<>();
 
     /**
      * count for checking task to tracker.
@@ -51,14 +51,14 @@ public class MenuTracker {
      * fill menu of actions.
      */
     public void fillActions() {
-        this.actions[position++] = this.new AddItem("Add the new item.");
-        this.actions[position++] = new MenuTracker.EditItem("Edit the item.");
-        this.actions[position++] = new DeleteItem("Delete the item.");
-        this.actions[position++] = new ShowItems("Show all items.");
-        this.actions[position++] = new FindItemByName("Find task by name.");
-        this.actions[position++] = new FindItemById("Find task by ID.");
-        this.actions[position++] = new AddComment("Add comment to task.");
-        this.actions[position++] = new ShowComments("Show all comments of task.");
+        this.actions.add(this.new AddItem("Add the new item."));
+        this.actions.add(new MenuTracker.EditItem("Edit the item."));
+        this.actions.add(new DeleteItem("Delete the item."));
+        this.actions.add(new ShowItems("Show all items."));
+        this.actions.add(new FindItemByName("Find task by name."));
+        this.actions.add(new FindItemById("Find task by ID."));
+        this.actions.add(new AddComment("Add comment to task."));
+        this.actions.add(new ShowComments("Show all comments of task."));
     }
 
     /**
@@ -66,17 +66,17 @@ public class MenuTracker {
      * @param action to add.
      */
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        this.actions.add(action);
     }
 
     /**
      * method for getting array of actions.
      * @return actions - int[].
      */
-    public int[] getRangeActions() {
-        int[] rangeActions = new int[actions.length];
-        for (int i = 0; i < rangeActions.length; i++) {
-            rangeActions[i] = actions[i].key();
+    public ArrayList<Integer> getRangeActions() {
+        ArrayList<Integer> rangeActions = new ArrayList<>();
+        for (int i = 0; i < actions.size(); i++) {
+            rangeActions.add(actions.get(i).key());
         }
         return rangeActions;
     }
@@ -86,7 +86,7 @@ public class MenuTracker {
      * @param key for select action.
      */
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
     }
 
     /**
@@ -132,7 +132,7 @@ public class MenuTracker {
             Item item = new Task(name, desc);
             tracker.add(item);
             countAddedTask++;
-            if (countAddedTask <= tracker.getAll().length) {
+            if (countAddedTask <= tracker.getAll().size()) {
                 System.out.println("You have successfully added the task. Your task id is: " + item.getId());
             } else {
                 System.out.println("Sorry you can't add task. List of task is full.");
@@ -208,10 +208,10 @@ public class MenuTracker {
          */
         public void execute(Input input, Tracker tracker) {
             System.out.println("The List of tasks: ");
-            Item[] items = tracker.getAll();
-            for (int i = 0; i < items.length; i++) {
-                if (items[i] != null) {
-                    System.out.println("Task - " + items[i].getName() + " with ID - " + items[i].getId());
+            ArrayList<Item> items = tracker.getAll();
+            for (int i = 0; i < items.size(); i++) {
+                if (items.get(i) != null) {
+                    System.out.println("Task - " + items.get(i).getName() + " with ID - " + items.get(i).getId());
                 }
             }
         }
