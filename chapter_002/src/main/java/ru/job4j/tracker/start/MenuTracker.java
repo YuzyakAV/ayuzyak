@@ -28,16 +28,6 @@ public class MenuTracker {
     private ArrayList<UserAction> actions = new ArrayList<>();
 
     /**
-     * count for checking task to tracker.
-     */
-    private int countAddedTask = 0;
-
-    /**
-     * action position.
-     */
-    private int position = 0;
-
-    /**
      * constructor for MenuTracker.
      * @param input for enter information.
      * @param tracker of tasks.
