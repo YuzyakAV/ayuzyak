@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
  * test for Bank.
  *
  * @author Ayuzyak
- * @since 01.05.2016
+ * @since 01.05.2017
  * @version 1.0
  */
 public class BankTest {
