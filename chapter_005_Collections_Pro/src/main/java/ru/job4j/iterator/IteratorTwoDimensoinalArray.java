@@ -36,15 +36,6 @@ public class IteratorTwoDimensoinalArray<E> implements Iterator<E> {
     }
 
     /**
-     * Check next element.
-     * @return true if iterator has next element.
-     */
-    @Override
-    public boolean hasNext() {
-        return cursorY < array.length;
-    }
-
-    /**
      * Get next element.
      * @return next element.
      */
