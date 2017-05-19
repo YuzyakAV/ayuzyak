@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * Iterator for two-dimensional array.
  *
  * @author Ayuzyak
- * @since 13.05.2017
+ * @since 14.05.2017
  * @version 1.0
  * @param <E> type of elements.
  */
@@ -33,6 +33,15 @@ public class IteratorTwoDimensoinalArray<E> implements Iterator<E> {
      */
     public IteratorTwoDimensoinalArray(final E[][] array) {
         this.array = array;
+    }
+
+    /**
+     * Check next element.
+     * @return true if iterator has next element.
+     */
+    @Override
+    public boolean hasNext() {
+        return cursorY < array.length;
     }
 
     /**
