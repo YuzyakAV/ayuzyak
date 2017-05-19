@@ -19,21 +19,6 @@ public class IteratorTwoDimensoinalArrayTest {
 
     /**
      * test method hasNext().
-     * If iterator has next element then method should return true.
-     */
-    @Test
-    public void whenIteratorHasNextElementThenTrue() {
-        final String[][] array = {
-                {"1", "2"},
-                {"3", "4"}};
-        IteratorTwoDimensoinalArray<String> iterator = new IteratorTwoDimensoinalArray<>(array);
-        final boolean resultNext = iterator.hasNext();
-        final boolean checkNext = true;
-        assertThat(resultNext, is(checkNext));
-    }
-
-    /**
-     * test method hasNext().
      * If iterator hasn't next element then method should return false.
      */
     @Test
