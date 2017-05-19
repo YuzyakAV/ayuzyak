@@ -42,6 +42,7 @@ public class IteratorTwoDimensoinalArray<E> implements Iterator<E> {
     @Override
     public boolean hasNext() {
         return cursorY < array.length;
+        return cursorX > array.length;
     }
 
     /**
