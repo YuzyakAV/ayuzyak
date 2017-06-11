@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Class MySimpleSet.
+ * Class MySimpleSet
  *
  * @author Ayuzyak
  * @since 03.06.2017

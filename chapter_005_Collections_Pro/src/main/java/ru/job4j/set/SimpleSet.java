@@ -6,7 +6,7 @@ package ru.job4j.set;
  * @author Ayuzyak
  * @since 06.06.2017
  * @version 1.0
- * @param <E> type of elements.
+ * @param <E> type of elements
  */
 public interface SimpleSet<E> extends Iterable<E> {
     /**

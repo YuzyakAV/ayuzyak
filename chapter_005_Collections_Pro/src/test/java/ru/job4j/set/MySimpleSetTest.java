@@ -18,7 +18,7 @@ import static org.junit.Assert.assertThat;
 public class MySimpleSetTest {
     /**
      * test method add() and next() by Iterator.
-     * Adding element and get it.
+     * Adding element and get it
      */
     @Test
     public void whenAddElementThenGetIt() {

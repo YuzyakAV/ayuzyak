@@ -19,7 +19,7 @@ public class SimpleArraySetTest {
     /**
      * test adding three same elements.
      * When invoke two times next() from iterator then should throws NoSuchElementException,
-     * because Set contains only unique elements.
+     * because Set contains only unique elements
      */
     @Test
     public void whenAddElementThenGetIt() {

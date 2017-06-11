@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @author Ayuzyak
  * @since 05.06.2017
  * @version 1.0
- * @param <E> type of elements.
+ * @param <E> type of elements
  */
 public class SimpleLinkedSet<E> implements SimpleSet<E> {
     /**

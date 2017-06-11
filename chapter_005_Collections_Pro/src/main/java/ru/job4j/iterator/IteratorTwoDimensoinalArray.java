@@ -36,7 +36,7 @@ public class IteratorTwoDimensoinalArray<E> implements Iterator<E> {
     }
 
     /**
-     * Check next element.
+     * Check next element
      * @return true if iterator has next element.
      */
     @Override
