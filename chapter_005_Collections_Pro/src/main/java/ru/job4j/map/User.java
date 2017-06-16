@@ -60,27 +60,4 @@ public class User {
                 && Objects.equals(birthday, user.birthday);
     }
 
-    /**
-     * Return hash code value for object.
-     * @return int value.
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, children, birthday);
-    }
-
-    /**
-     * Main method.
-     * @param args is empty.
-     */
-    public static void main(String[] args) {
-        Calendar firstBirth = new GregorianCalendar(1900, 0, 10);
-        Calendar secondBirth = new GregorianCalendar(1900, 0, 10);
-        User firstUser = new User("Alex", 2, firstBirth);
-        User secondUser = new User("Alex", 2, secondBirth);
-        Map<User, Object> map = new HashMap<>();
-        map.put(firstUser, null);
-        map.put(secondUser, null);
-        System.out.println(map);
-    }
 }
