@@ -76,8 +76,8 @@ public class User {
     public static void main(String[] args) {
         Calendar firstBirth = new GregorianCalendar(1900, 0, 10);
         Calendar secondBirth = new GregorianCalendar(1900, 0, 10);
-        User firstUser = new User("Alex", 2, firstBirth);
-        User secondUser = new User("Alex", 2, secondBirth);
+        User firstUser = new User("Andr", 2, firstBirth);
+        User secondUser = new User("Andr", 2, secondBirth);
         Map<User, Object> map = new HashMap<>();
         map.put(firstUser, null);
         map.put(secondUser, null);
