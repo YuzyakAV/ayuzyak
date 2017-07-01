@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class User {
     /**
-     * User name.
+     * User name
      */
     private String name;
 

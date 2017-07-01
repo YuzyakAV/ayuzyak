@@ -41,7 +41,7 @@ public class MyMap<K, V> implements Iterable<K> {
      * Adding elements to map.
      * @param key for adding.
      * @param value for adding.
-     * @return previous key value.
+     * @return previous key value
      */
     public V insert(K key, V value) {
         grow();
