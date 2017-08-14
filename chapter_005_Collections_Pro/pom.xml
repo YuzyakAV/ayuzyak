@@ -1,0 +1,16 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+ 
+	<groupId>ru.job4j</groupId>
+	<artifactId>chapter_005_Collections_Pro</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	
+	
+	<parent>
+		<groupId>ru.job4j</groupId>
+		<artifactId>ayuzyak</artifactId>
+		<version>2.0</version>
+	</parent>
+
+</project>
