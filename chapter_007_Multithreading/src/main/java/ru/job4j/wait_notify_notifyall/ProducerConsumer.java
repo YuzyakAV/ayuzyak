@@ -32,10 +32,10 @@ public class ProducerConsumer<T> {
      */
     public void produce(T elem) {
         synchronized (this) {
-            System.out.println(Thread.currentThread().getName() + " добавляет в очередь задание");
+            System.out.println(Thread.currentThread().getName() + " РґРѕР±Р°РІР»СЏРµС‚ РІ РѕС‡РµСЂРµРґСЊ Р·Р°РґР°РЅРёРµ");
             queue.add(elem);
             System.out.println(Thread.currentThread().getName()
-                    + " оповещает работника о том, что для него появилась работа " + elem);
+                    + " РѕРїРѕРІРµС‰Р°РµС‚ СЂР°Р±РѕС‚РЅРёРєР° Рѕ С‚РѕРј, С‡С‚Рѕ РґР»СЏ РЅРµРіРѕ РїРѕСЏРІРёР»Р°СЃСЊ СЂР°Р±РѕС‚Р° " + elem);
             notify();
         }
     }
@@ -48,11 +48,11 @@ public class ProducerConsumer<T> {
     public void consume() throws InterruptedException {
         synchronized (this) {
             while (queue.isEmpty()) {
-                System.out.println(Thread.currentThread().getName() + " ждет пока появится работа в очереди");
+                System.out.println(Thread.currentThread().getName() + " Р¶РґРµС‚ РїРѕРєР° РїРѕСЏРІРёС‚СЃСЏ СЂР°Р±РѕС‚Р° РІ РѕС‡РµСЂРµРґРё");
                 wait();
             }
             T element = queue.remove();
-            System.out.println(Thread.currentThread().getName() + " приступил к " + element);
+            System.out.println(Thread.currentThread().getName() + " РїСЂРёСЃС‚СѓРїРёР» Рє " + element);
         }
     }
 
@@ -68,21 +68,21 @@ public class ProducerConsumer<T> {
             @Override
             public void run() {
                 try {
-                    System.out.println(Thread.currentThread().getName() + " думает чем занять своих работников");
+                    System.out.println(Thread.currentThread().getName() + " РґСѓРјР°РµС‚ С‡РµРј Р·Р°РЅСЏС‚СЊ СЃРІРѕРёС… СЂР°Р±РѕС‚РЅРёРєРѕРІ");
                     TimeUnit.MILLISECONDS.sleep(100);
-                    producerConsumer.produce("Копка траншеи");
-                    producerConsumer.produce("Заливка фундамента");
-                    producerConsumer.produce("Уборка территории");
-                    producerConsumer.produce("Посадка деревьев");
-                    System.out.println(Thread.currentThread().getName() + " устал давать задания и хочет передохнуть");
+                    producerConsumer.produce("РљРѕРїРєР° С‚СЂР°РЅС€РµРё");
+                    producerConsumer.produce("Р—Р°Р»РёРІРєР° С„СѓРЅРґР°РјРµРЅС‚Р°");
+                    producerConsumer.produce("РЈР±РѕСЂРєР° С‚РµСЂСЂРёС‚РѕСЂРёРё");
+                    producerConsumer.produce("РџРѕСЃР°РґРєР° РґРµСЂРµРІСЊРµРІ");
+                    System.out.println(Thread.currentThread().getName() + " СѓСЃС‚Р°Р» РґР°РІР°С‚СЊ Р·Р°РґР°РЅРёСЏ Рё С…РѕС‡РµС‚ РїРµСЂРµРґРѕС…РЅСѓС‚СЊ");
                     TimeUnit.MILLISECONDS.sleep(100);
-                    System.out.println(Thread.currentThread().getName() + "отдохнул и придумал еще несколько задач");
-                    producerConsumer.produce("Чистка уборной");
-                    producerConsumer.produce("Доставка пива");
-                    producerConsumer.produce("Приготовление ужина");
-                    System.out.println(Thread.currentThread().getName() + " ждёт пока все задачи выполнятся");
+                    System.out.println(Thread.currentThread().getName() + "РѕС‚РґРѕС…РЅСѓР» Рё РїСЂРёРґСѓРјР°Р» РµС‰Рµ РЅРµСЃРєРѕР»СЊРєРѕ Р·Р°РґР°С‡");
+                    producerConsumer.produce("Р§РёСЃС‚РєР° СѓР±РѕСЂРЅРѕР№");
+                    producerConsumer.produce("Р”РѕСЃС‚Р°РІРєР° РїРёРІР°");
+                    producerConsumer.produce("РџСЂРёРіРѕС‚РѕРІР»РµРЅРёРµ СѓР¶РёРЅР°");
+                    System.out.println(Thread.currentThread().getName() + " Р¶РґС‘С‚ РїРѕРєР° РІСЃРµ Р·Р°РґР°С‡Рё РІС‹РїРѕР»РЅСЏС‚СЃСЏ");
                     TimeUnit.MILLISECONDS.sleep(500);
-                    System.out.println(Thread.currentThread().getName() + " отправляет работников отдыхать");
+                    System.out.println(Thread.currentThread().getName() + " РѕС‚РїСЂР°РІР»СЏРµС‚ СЂР°Р±РѕС‚РЅРёРєРѕРІ РѕС‚РґС‹С…Р°С‚СЊ");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -100,16 +100,16 @@ public class ProducerConsumer<T> {
                         producerConsumer.consume();
                     }
                 } catch (InterruptedException e) {
-                    System.out.println(Thread.currentThread().getName() + " пошел спать");
+                    System.out.println(Thread.currentThread().getName() + " РїРѕС€РµР» СЃРїР°С‚СЊ");
                 }
 
             }
         }
 
-        Thread boss = new Thread(producer, "Начальник");
-        Thread worker1 = new Thread(new Consumer(), "Равшан");
-        Thread worker2 = new Thread(new Consumer(), "Джамшут");
-        Thread worker3 = new Thread(new Consumer(), "Колян");
+        Thread boss = new Thread(producer, "РќР°С‡Р°Р»СЊРЅРёРє");
+        Thread worker1 = new Thread(new Consumer(), "РўР°РґР¶РёРє");
+        Thread worker2 = new Thread(new Consumer(), "РЈР·Р±РµРє");
+        Thread worker3 = new Thread(new Consumer(), "РўРѕР»РёРє");
         worker1.start();
         worker2.start();
         worker3.start();
