@@ -23,12 +23,7 @@ public class Model {
      */
     private String name;
 
-    /**
-     * Model version.
-     */
-    private volatile int version = 0;
-
-    /**
+     /**
      * Constructor.
      * @param name for model.
      */
