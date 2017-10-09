@@ -1,94 +1,80 @@
 package ru.job4j.jdbc;
- 
- import java.sql.*;
- 
- public class Optimization {
-     private int maxCount;
-     private String url;
-     private String userName;
-     private String password;
- 
-     public String getUrl() {
-         return url;
-     }
- 
-     public void setUrl(String serverUrl) {
-         this.url = "jdbc:postgresql://" + serverUrl;
-     }
- 
-     public String getUserName() {
-         return userName;
-     }
- 
-     public void setUserName(String userName) {
-         this.userName = userName;
-     }
- 
-     public String getPassword() {
-         return password;
-     }
- 
-     public void setPassword(String password) {
-         this.password = password;
-     }
- 
-     public int getMaxCount() {
-         return maxCount;
-     }
- 
-     public void setMaxCount(int maxCount) {
-         this.maxCount = maxCount;
-     }
- 
-     public Connection getConnection() throws ClassNotFoundException, SQLException {
-         return DriverManager.getConnection(url, userName, password);
-     }
- 
-     public void insertRows(Connection connection) {
-         try {
-             Statement st = connection.createStatement();
-             st.executeUpdate("DROP TABLE IF EXISTS TEST");
-             st.executeUpdate("CREATE TABLE TEST (FIELD INT)");
-             st.execute("CREATE OR REPLACE FUNCTION insertCount(n INTEGER) RETURNS VOID AS $$\n" +
-                     "DECLARE c INTEGER := 1;\n" +
-                     "BEGIN\n" +
-                     "  LOOP\n" +
-                     "    IF c > n THEN\n" +
-                     "      EXIT;\n" +
-                     "    END IF;\n" +
-                     "    INSERT INTO test (field) VALUES (c);\n" +
-                     "    c := c + 1;\n" +
-                     "  END LOOP;\n" +
-                     "END;\n" +
-                     "$$ LANGUAGE plpgsql;");
-             PreparedStatement statement = connection.prepareStatement("SELECT insertcount(?)");
-             statement.setInt(1, maxCount);
-             statement.execute();
-         } catch (SQLException e) {
-             for (Throwable t : e) {
-                 e.printStackTrace();
-             }
-         }
-     }
- 
-     public static void main(String[] args) throws ClassNotFoundException {
-         String myURL = "localhost:5432/sqlite";
-         String myUser = "postgres";
-         String myPassword = "shelby";
-         int count = 1_000_000;
-         Optimization opti = new Optimization();
-         opti.setUrl(myURL);
-         opti.setUserName(myUser);
-         opti.setPassword(myPassword);
-         opti.setMaxCount(count);
-         try (Connection con = opti.getConnection()){
-             opti.insertRows(con);
-         } catch (ClassNotFoundException e) {
-             e.printStackTrace();
-         } catch (SQLException e) {
-             for (Throwable t : e) {
-                 t.printStackTrace();
-             }
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+/**
+ * Class Optimizator.
+ * Create new Table in database, getting data from this table and create 1.xml file in current directory.
+ * Then parse 1.xml by XSLT and create 2.xml.
+ * Then parse 2.xml and sum all integer fields.
+ *
+ * @author Ayuzyak
+ * @version 1.0
+ * @since 08.10.2017
+ */
+public class Optimizator {
+    /**
+     * Number of rows for inserting.
+     */
+    private int rowNumber;
+
+    /**
+     * Database URL.
+     */
+    private String url = "";
+
+    /**
+     * Constructor for Optimizator.
+     */
+    public Optimizator() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Укажите адрес базы данных SQLite либо введите пустую строку "
+                    + "(будет выбрана база по умолчанию)");
+            this.url = scanner.nextLine();
+            System.out.println("Введите число записей для вставки в базу данных");
+            this.rowNumber = scanner.nextInt();
         }
-     }
- }
+    }
+
+    /**
+     * Start application.
+     * @return sum of all rows.
+     */
+    public long start() {
+        long sum = 0;
+        SQLTableCreator tableCreator = new SQLTableCreator();
+        if (this.url.equals("")) {
+            tableCreator.setUrl();
+        } else {
+            tableCreator.setUrl(this.url);
+        }
+        tableCreator.setMaxCount(this.rowNumber);
+        XMLCreator xmlCreator = new XMLCreator();
+        xmlCreator.setTableName("test");
+        xmlCreator.setFieldName("field");
+        XMLTransformer transformer = new XMLTransformer();
+        XMLSumParser sumParser = new XMLSumParser();
+        try (Connection con = tableCreator.getConnection()) {
+            tableCreator.insertRows(con);
+            xmlCreator.createXML(con);
+            transformer.transform();
+            sum = sumParser.parseAndSum();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+
+    /**
+     * PSVM.
+     * @param args from CMD-Line.
+     */
+    public static void main(String[] args) {
+        Optimizator optimizator = new Optimizator();
+        long start = System.currentTimeMillis();
+        System.out.println("Арифметическая сумма всех записей равна - " + optimizator.start());
+        System.out.println("Время выполнения программы - " + (System.currentTimeMillis() - start) / 1000 + " сек");
+    }
+}
