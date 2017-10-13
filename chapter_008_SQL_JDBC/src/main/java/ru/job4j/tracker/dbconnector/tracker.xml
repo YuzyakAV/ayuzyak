@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <tracker>
+ 	<connect>
+ 		<database>tracker</database>
+ 		<user>postgres</user>
+ 		<password>shelby</password>
+ 	</connect>
+ 
+ 	<create>
+ 		<tasks>
+ 		CREATE TABLE IF NOT EXISTS tasks 
+ 		(task_id SERIAL PRIMARY KEY,
+ 		name VARCHAR(20) NOT NULL,
+ 		description VARCHAR(1000) NOT NULL,
+ 		time_of_creating timestamp DEFAULT CLOCK_TIMESTAMP());
+ 		</tasks>
+ 		
+ 		<comments>
+ 		CREATE TABLE IF NOT EXISTS comments
+ 		(com_id SERIAL PRIMARY KEY,
+ 		comment VARCHAR(1000) NOT NULL,
+ 		time_of_creating timestamp DEFAULT CLOCK_TIMESTAMP(),
+ 		task_id INT NOT NULL REFERENCES tasks(task_id));
+ 		</comments>
+ 	</create>
+ 	
+ 	<populate>
+ 		<tasks>
+ 			INSERT INTO tasks (name, description) VALUES ('Chat', 'Create new good chat');
+ 		</tasks>
+ 		<tasks>
+ 			INSERT INTO tasks (name, description) VALUES ('Populate database', 'Insert 100 rows to database');
+ 		</tasks>
+ 		<tasks>
+ 			INSERT INTO tasks (name, description) VALUES ('Javascript', 'Learn javascript');
+ 		</tasks>
+ 		
+ 		<comments>
+ 			INSERT  INTO comments (comment, task_id) VALUES ('It is very hard task', 1);
+ 		</comments>
+ 		<comments>
+ 			INSERT  INTO comments (comment, task_id) VALUES ('Ok, I will do it', 2);
+ 		</comments>
+ 		<comments>
+ 			INSERT  INTO comments (comment, task_id) VALUES ('It is cool task', 2);
+ 		</comments>
+ 	</populate>
+ </tracker> 
