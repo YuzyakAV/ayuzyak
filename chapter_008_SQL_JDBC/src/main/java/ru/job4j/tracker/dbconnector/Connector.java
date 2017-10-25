@@ -12,12 +12,12 @@ package ru.job4j.tracker.dbconnector;
   * @since 12.10.2017
   */
  public class Connector {
- 
+
      /**
       * Connection to database.
       */
      private Connection connection;
- 
+
      /**
       * Constructor for Connector.
       *
@@ -34,13 +34,13 @@ package ru.job4j.tracker.dbconnector;
              e.printStackTrace();
          }
      }
- 
+
      /**
       * Getter for connection.
       *
       * @return Connection.
       */
      public Connection getConnection() {
-        return connection;
+         return connection;
      }
- +}
+ }

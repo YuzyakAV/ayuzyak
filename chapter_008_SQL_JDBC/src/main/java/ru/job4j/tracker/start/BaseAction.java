@@ -13,7 +13,7 @@ package ru.job4j.tracker.start;
       * name.
       */
      private String name;
- 
+
      /**
       * constructor for BaseAction.
       * @param name of object's.
@@ -21,21 +21,22 @@ package ru.job4j.tracker.start;
      public BaseAction(String name) {
          this.name = name;
      }
- 
+
      /**
       * key for actions.
       * @return int key.
       */
      @Override
      public abstract int key();
- 
+
      /**
       * method for execute action.
       * @param input for enter information.
+      * @param tracker of tasks.
       */
      @Override
-     public abstract void execute(Input input, Connection connection);
- 
+     public abstract void execute(Input input, Tracker tracker);
+
      /**
       * method for print information.
       * @return String information.

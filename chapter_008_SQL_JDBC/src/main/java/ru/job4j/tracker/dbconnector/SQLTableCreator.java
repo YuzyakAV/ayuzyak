@@ -22,17 +22,17 @@ package ru.job4j.tracker.dbconnector;
       * Command to create Tasks table.
       */
      private String tasksCreate;
- 
+
      /**
       * Command to create Comments Table.
       */
      private String commentsCreate;
- 
+
      /**
       * Document to parse.
       */
      private Document document;
- 
+
      /**
       * Constructor for SQLTableCreator.
       * @param docParser to getting Document.
@@ -56,7 +56,7 @@ package ru.job4j.tracker.dbconnector;
              }
          }
      }
- 
+
      /**
       * Create tables Tasks and Comments.
       * @param connection to database.
@@ -67,12 +67,10 @@ package ru.job4j.tracker.dbconnector;
              statement.executeUpdate(tasksCreate);
              statement.executeUpdate(commentsCreate);
          } catch (SQLException e) {
-             for (Throwable t : e) {
-                 t.printStackTrace();
-             }
+             e.printStackTrace();
          }
      }
- 
+
      /**
       * Populate tables Tasks and Comments.
       * @param connection to database.
@@ -87,7 +85,7 @@ package ru.job4j.tracker.dbconnector;
              }
              if (countRows > 0) {
                  System.out.println("Database already contains data");
-            } else {
+             } else {
                  Element root = document.getDocumentElement();
                  NodeList children = root.getElementsByTagName("populate");
                  NodeList connectChild = children.item(0).getChildNodes();
@@ -107,12 +105,10 @@ package ru.job4j.tracker.dbconnector;
                  System.out.println("Database has been populated");
              }
          } catch (SQLException e) {
-             for (Throwable t : e) {
-                 t.printStackTrace();
-             }
+             e.printStackTrace();
          }
      }
- 
+
      /**
       * Insert rows to database.
       * @param command to execute.
@@ -123,9 +119,7 @@ package ru.job4j.tracker.dbconnector;
              Statement statement = connection.createStatement();
              statement.executeUpdate(command);
          } catch (SQLException e) {
-             for (Throwable t : e) {
-                 t.printStackTrace();
-             }
+             e.printStackTrace();
          }
      }
  }
