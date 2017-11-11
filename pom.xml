@@ -19,7 +19,8 @@
         <module>chapter_005_Collections_Lite</module>
         <module>chapter_005_Collections_Pro</module>
         <module>chapter_007_Multithreading</module>
-		<module>chapter_008_SQL_JDBC</module>
+        <module>chapter_008_SQL_JDBC</module>
+        <module>chapter_009_Servlet_JSP</module>
     </modules>
 
     <dependencies>
@@ -68,21 +69,21 @@
         </dependency>
 
         <dependency>
-                       <groupId>org.jsoup</groupId>
-                       <artifactId>jsoup</artifactId>
-             <version>1.10.3</version>
-                    </dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.10.3</version>
+        </dependency>
 
-                <dependency>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-api</artifactId>
-                    <version>2.9.1</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-core</artifactId>
-                    <version>2.9.1</version>
-                </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.9.1</version>
+        </dependency>
 
     </dependencies>
 
