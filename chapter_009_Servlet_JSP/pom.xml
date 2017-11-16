@@ -3,39 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
-	<artifactId>chapter_009_Servlet_JSP</artifactId>
-	<version>1.0</version>
-	<packaging>war</packaging>
-	
-	<parent>
-		<groupId>ru.job4j</groupId>
-		<artifactId>ayuzyak</artifactId>
-		<version>2.0</version>
-	</parent>
 
-	<dependencies>
+    <artifactId>chapter_009_Servlet_JSP</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+    <parent>
+        <groupId>ru.job4j</groupId>
+        <artifactId>ayuzyak</artifactId>
+        <version>2.0</version>
+    </parent>
+
+    <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple  избавляемся от warning в консоле-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
-            <scope>test</scope>
-        </dependency>
-
-
     </dependencies>
 </project>

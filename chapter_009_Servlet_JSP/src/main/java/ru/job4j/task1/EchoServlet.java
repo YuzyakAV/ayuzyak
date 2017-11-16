@@ -1,7 +1,7 @@
 package ru.job4j.task1;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +12,16 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /**
- * Мой первый сервлет.
+ * РњРѕР№ РїРµСЂРІС‹Р№ СЃРµСЂРІР»РµС‚.
  */
 public class EchoServlet extends HttpServlet {
     /**
-     * Логгер.
+     * Р›РѕРіРіРµСЂ.
      */
-    private static final Logger LOGGER = LoggerFactory.getLogger(EchoServlet.class);
+    private static final Logger LOGGER = LogManager.getLogger(Logger.class.getName());
 
     /**
-     * Переопределенный метод doGet().
+     * РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРЅС‹Р№ РјРµС‚РѕРґ doGet().
      *
      * @param req request.
      * @param resp response.
