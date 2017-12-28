@@ -1,0 +1,55 @@
+<web-app>
+    <!--Фильтр для удаления пробелов введеных в форму HTML данных-->
+    <filter>
+        <filter-name>Trim</filter-name>
+        <filter-class>ru.job4j.FilterTrim</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Trim</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>Getuser</servlet-name>
+        <servlet-class>ru.job4j.GetUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>ru.job4j.UsersServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Deleteuser</servlet-name>
+        <servlet-class>ru.job4j.DeleteUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Updateuser</servlet-name>
+        <servlet-class>ru.job4j.UpdateUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Createuser</servlet-name>
+        <servlet-class>ru.job4j.CreateUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Getuser</servlet-name>
+        <url-pattern>/getuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/userservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deleteuser</servlet-name>
+        <url-pattern>/deleteuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Updateuser</servlet-name>
+        <url-pattern>/updateuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Createuser</servlet-name>
+        <url-pattern>/createuser</url-pattern>
+    </servlet-mapping>
+
+</web-app>
