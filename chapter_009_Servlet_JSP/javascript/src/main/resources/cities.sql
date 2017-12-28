@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS cities (
+  id SERIAL PRIMARY KEY,
+  city VARCHAR(60) NOT NULL,
+  country_id INTEGER REFERENCES countries(id) NOT NULL
+);

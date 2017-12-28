@@ -1,0 +1,146 @@
+<web-app>
+    <!--Фильтр для удаления пробелов введеных в форму HTML данных-->
+    <filter>
+        <filter-name>Trim</filter-name>
+        <filter-class>ru.job4j.FilterTrim</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Trim</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>Authenticate</filter-name>
+        <filter-class>ru.job4j.AuthenticateFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Authenticate</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>No for users</filter-name>
+        <filter-class>ru.job4j.NoForUsersFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>No for users</filter-name>
+        <url-pattern>/createuser</url-pattern>
+    </filter-mapping>
+
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <scripting-invalid>
+                true
+            </scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
+
+    <servlet>
+        <servlet-name>Users View Servlet</servlet-name>
+        <servlet-class>ru.job4j.UsersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Users View Servlet</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Createuser</servlet-name>
+        <servlet-class>ru.job4j.CreateUser</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Createuser</servlet-name>
+        <url-pattern>/createuser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Getuser</servlet-name>
+        <servlet-class>ru.job4j.GetUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Getuser</servlet-name>
+        <url-pattern>/getuser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Deleteuser</servlet-name>
+        <servlet-class>ru.job4j.DeleteUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Deleteuser</servlet-name>
+        <url-pattern>/deleteuser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Updateuser</servlet-name>
+        <servlet-class>ru.job4j.UpdateUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Updateuser</servlet-name>
+        <url-pattern>/updateuser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignIn</servlet-name>
+        <servlet-class>ru.job4j.SignInController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignIn</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>ru.job4j.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Admin Self Update</servlet-name>
+        <servlet-class>ru.job4j.AdminSelfUpdate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin Self Update</servlet-name>
+        <url-pattern>/adminselfupdate</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>User Self Update</servlet-name>
+        <servlet-class>ru.job4j.UserSelfUpdate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>User Self Update</servlet-name>
+        <url-pattern>/userselfupdate</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Country Servlet</servlet-name>
+        <servlet-class>ru.job4j.cities.CountryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Country Servlet</servlet-name>
+        <url-pattern>/countries</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>City Servlet</servlet-name>
+        <servlet-class>ru.job4j.cities.CityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>City Servlet</servlet-name>
+        <url-pattern>/cities</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Validate User</servlet-name>
+        <servlet-class>ru.job4j.validates.UserValidate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Validate User</servlet-name>
+        <url-pattern>/usercheck</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/views/errors/Error403.jsp</location>
+    </error-page>
+
+</web-app>
