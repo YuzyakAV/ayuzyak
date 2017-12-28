@@ -1,0 +1,42 @@
+<web-app>
+    <!--Фильтр для удаления пробелов введеных в форму HTML данных-->
+    <filter>
+        <filter-name>Trim</filter-name>
+        <filter-class>ru.job4j.http.FilterTrim</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Trim</filter-name>
+        <servlet-name>UserServlet</servlet-name>
+    </filter-mapping>
+
+    <!--Сервлет для первого задания-->
+    <servlet>
+        <servlet-name>EchoServlet</servlet-name>
+        <servlet-class>ru.job4j.task1.EchoServlet</servlet-class>
+    </servlet>
+
+    <!--Сервлеты для второго задания-->
+    <servlet>
+        <servlet-name>MainServlet</servlet-name>
+        <servlet-class>ru.job4j.http.MainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>ru.job4j.http.UsersServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EchoServlet</servlet-name>
+        <url-pattern>/echo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/mainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
