@@ -12,40 +12,40 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 
 /**
- * Класс, отсекающий пробелы в начале и конце полей для ввода данных на web-страницах.
+ * ГЉГ«Г Г±Г±, Г®ГІГ±ГҐГЄГ ГѕГ№ГЁГ© ГЇГ°Г®ГЎГҐГ«Г» Гў Г­Г Г·Г Г«ГҐ ГЁ ГЄГ®Г­Г¶ГҐ ГЇГ®Г«ГҐГ© Г¤Г«Гї ГўГўГ®Г¤Г  Г¤Г Г­Г­Г»Гµ Г­Г  web-Г±ГІГ°Г Г­ГЁГ¶Г Гµ.
  * @author Ayuzyak
  * @version 1.0
  * @since 02.12.2017
  */
 public class FilterTrim implements Filter {
     /**
-     * Логгер.
+     * Г‹Г®ГЈГЈГҐГ°.
      */
     private static final Logger LOGGER = LogManager.getLogger(Logger.class.getName());
 
     /**
-     * Переменная для сохранения настроек фильтра.
+     * ГЏГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г¤Г«Гї 
      */
     private FilterConfig filterConfig;
 
     /**
-     * Метод для инициализации фильтра.
+     * ГЊГҐГІГ®Г¤ Г¤Г«Гї ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГЁ ГґГЁГ«ГјГІГ°Г .
      *
-     * @param filterConfig настройки фильтра.
+     * @param filterConfig Г­Г Г±ГІГ°Г®Г©ГЄГЁ ГґГЁГ«ГјГІГ°Г .
      * @throws ServletException .
      */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         this.filterConfig = filterConfig;
-        LOGGER.info("Фильтр по обрезке пробелов в начале и в конце инициализирован");
+        LOGGER.info("Г”ГЁГ«ГјГІГ° ГЇГ® Г®ГЎГ°ГҐГ§ГЄГҐ ГЇГ°Г®ГЎГҐГ«Г®Гў Гў Г­Г Г·Г Г«ГҐ ГЁ Гў ГЄГ®Г­Г¶ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­");
     }
 
     /**
-     * Отсечение пробелов в полях форм, а также усатновка пустых значений строк, если поле не заполнено.
+     * ГЋГІГ±ГҐГ·ГҐГ­ГЁГҐ ГЇГ°Г®ГЎГҐГ«Г®Гў Гў ГЇГ®Г«ГїГµ ГґГ®Г°Г¬, Г  ГІГ ГЄГ¦ГҐ ГіГ±Г ГІГ­Г®ГўГЄГ  ГЇГіГ±ГІГ»Гµ Г§Г­Г Г·ГҐГ­ГЁГ© Г±ГІГ°Г®ГЄ, ГҐГ±Г«ГЁ ГЇГ®Г«ГҐ Г­ГҐ Г§Г ГЇГ®Г«Г­ГҐГ­Г®.
      *
-     * @param request  запрос.
-     * @param response ответ.
-     * @param chain    переменная для передачи обработки request и response следующему фильтру.
+     * @param request  Г§Г ГЇГ°Г®Г±.
+     * @param response Г®ГІГўГҐГІ.
+     * @param chain    ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г¤Г«Гї ГЇГҐГ°ГҐГ¤Г Г·ГЁ Г®ГЎГ°Г ГЎГ®ГІГЄГЁ request ГЁ response Г±Г«ГҐГ¤ГіГѕГ№ГҐГ¬Гі ГґГЁГ«ГјГІГ°Гі.
      * @throws IOException      .
      * @throws ServletException .
      */
@@ -79,11 +79,11 @@ public class FilterTrim implements Filter {
     }
 
     /**
-     * Запускается при деинициализации фильтра.
+     * Г‡Г ГЇГіГ±ГЄГ ГҐГІГ±Гї ГЇГ°ГЁ Г¤ГҐГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГЁ ГґГЁГ«ГјГІГ°Г .
      */
     @Override
     public void destroy() {
-        LOGGER.info("Фильтр по обрезке пробелов в начале и в конце деинициализирован");
+        LOGGER.info("Г”ГЁГ«ГјГІГ° ГЇГ® Г®ГЎГ°ГҐГ§ГЄГҐ ГЇГ°Г®ГЎГҐГ«Г®Гў Гў Г­Г Г·Г Г«ГҐ ГЁ Гў ГЄГ®Г­Г¶ГҐ Г¤ГҐГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­");
         filterConfig = null;
     }
 }
