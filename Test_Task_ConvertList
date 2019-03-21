@@ -8,7 +8,7 @@ import java.util.List;
  * Class for convert two-dimensional Array to ArrayList and backward and convert list of int arrays to list of integers.
  *
  * @author Ayuzyak
- * @since 30.03.2017
+ * @since 21.03.2019
  * @version 1.0
  */
 public class ConvertList {
