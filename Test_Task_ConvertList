@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
+/*
  * Class for convert two-dimensional Array to ArrayList and backward and convert list of int arrays to list of integers.
  *
  * @author Ayuzyak
