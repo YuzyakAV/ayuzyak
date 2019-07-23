@@ -54,7 +54,7 @@
         <module name="WhitespaceAfter"/>
         <module name="WhitespaceAround"/>
 
-        <!-- Modifier Checks                                    -->
+        <!-- Modifier Check                                    -->
         <!-- See http://checkstyle.sf.net/config_modifiers.html -->
 
         <!-- Checks for blocks. You know, those {}'s         -->
